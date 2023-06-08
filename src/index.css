@@ -259,13 +259,17 @@ main {
 }
 .container {
   padding: 2rem;
-  display: grid;
-  row-gap: 1.5rem;
-  height: 160px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }
-
+.form-inputs {
+  display: flex;
+  gap: 0.2rem;
+}
 .color-form {
   display: flex;
+  gap: 1rem;
 }
 input[type="text"] {
   border: var(--grey-200) solid 1px;
@@ -305,14 +309,19 @@ input[type="number"] {
   letter-spacing: 3px;
   transition-duration: 0s;
 }
+.form-numbers {
+  display: flex;
+}
 @media screen and (min-width: 768px) {
-  .container {
-    grid-template-columns: auto 1fr;
-    column-gap: 2rem;
-    align-items: center;
-  }
+}
+@media screen and (max-width: 1100px) {
   .color-form {
-    height: 40px;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+  .shades {
+    padding-left: 0;
+    padding-right: 2rem;
   }
 }
 
