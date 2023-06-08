@@ -11,39 +11,43 @@ const Form = ({ color, setColor, setShades }) => {
     <section className="container">
       <h4>Color Generator</h4>
       <form className="color-form" onSubmit={(e) => e.preventDefault()}>
-        <input
-          type="color"
-          onChange={(e) => setColorVal(e.target.value)}
-          value={reg.test(colorVal) ? colorVal : color}
-        />
-        <input
-          type="text"
-          placeholder={reg.test(colorVal) ? colorVal : color}
-          onChange={(e) => setColorVal(e.target.value)}
-        />
-        <label htmlFor="shades" className="shades">
-          Weight Difference:
-        </label>
-        <input
-          type="number"
-          min={1}
-          name="shades"
-          placeholder="10"
-          onChange={(e) => {
-            if (Number(e.target.value) > 0) setTempShades(e.target.value);
-          }}
-        />
-        <button
-          className="btn"
-          type="button"
-          style={{ background: `${reg.test(colorVal) ? colorVal : color}` }}
-          onClick={() => {
-            setColor(colorVal);
-            setShades(Number(temShades));
-          }}
-        >
-          Generate
-        </button>
+        <div className="form-inputs">
+          <input
+            type="color"
+            onChange={(e) => setColorVal(e.target.value)}
+            value={reg.test(colorVal) ? colorVal : color}
+          />
+          <input
+            type="text"
+            placeholder={reg.test(colorVal) ? colorVal : color}
+            onChange={(e) => setColorVal(e.target.value)}
+          />
+        </div>
+        <div className="form-numbers">
+          <label htmlFor="shades" className="shades">
+            Weight Difference:
+          </label>
+          <input
+            type="number"
+            min={1}
+            name="shades"
+            placeholder="10"
+            onChange={(e) => {
+              if (Number(e.target.value) > 0) setTempShades(e.target.value);
+            }}
+          />
+          <button
+            className="btn"
+            type="button"
+            style={{ background: `${reg.test(colorVal) ? colorVal : color}` }}
+            onClick={() => {
+              setColor(colorVal);
+              setShades(Number(temShades));
+            }}
+          >
+            Generate
+          </button>
+        </div>
       </form>
     </section>
   );
