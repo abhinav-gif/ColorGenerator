@@ -268,7 +268,7 @@ main {
   display: flex;
 }
 input[type="text"] {
-  border-color: transparent;
+  border: var(--grey-200) solid 1px;
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   max-width: 200px;
@@ -278,6 +278,25 @@ input[type="color"] {
   height: 100%;
   background-color: var(--white);
   border-color: var(--white);
+}
+.shades {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+}
+input[type="number"] {
+  height: 100%;
+  background-color: var(--white);
+  border-color: var(--white);
+  width: 4rem;
+  text-align: center;
+  border: var(--grey-200) solid 1px;
+  margin-right: 2rem;
+  font-size: 1.1rem;
 }
 .container .btn {
   border-radius: 0;

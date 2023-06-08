@@ -3,8 +3,8 @@ import Values from "values.js";
 import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
 // nanoid is used to give unique id as key in map function
-const Colors = ({ color }) => {
-  const colorList = new Values(color).all(10);
+const Colors = ({ color, shades }) => {
+  const colorList = new Values(color).all(Number(shades));
 
   return (
     <div className="colors">
@@ -21,8 +21,11 @@ const Colors = ({ color }) => {
           }
         };
         return (
+          // light color theme for the color blocks after later half of colorList (darker shades)
           <div
-            className={index > 10 ? "color color-light" : "color"}
+            className={
+              index >= colorList.length / 2 ? "color color-light" : "color"
+            }
             style={{ background: `#${item.hex}` }}
             onClick={copyToClipboard}
             key={nanoid()}
