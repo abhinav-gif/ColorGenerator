@@ -4,7 +4,7 @@ const Form = ({ color, setColor, setShades }) => {
   // color val is the value selected or written in input
   // color is the final value that sets the color after generate button is clicked
   const [colorVal, setColorVal] = useState(color);
-  const [temShades, setTempShades] = useState(2);
+  const [temShades, setTempShades] = useState(10);
   const reg = /^#[0-9A-F]{6}$/i;
   // check if string is a valid hex color
   return (
